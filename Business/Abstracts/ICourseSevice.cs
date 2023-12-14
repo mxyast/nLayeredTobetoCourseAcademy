@@ -1,19 +1,15 @@
-﻿using Business.Dtos.Requests;
-using Business.Dtos.Responses;
+﻿using Business.Dtos.Requests.CourseRequest;
+using Business.Dtos.Responses.CourseResponse;
 using Core.DataAccess.Paging;
-using Entities.Concretes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
     public interface ICourseSevice
     {
-        Task<Paginate<CreatedCourseResponse>> GetListAsync();
+        Task<Paginate<GetListCourseResponse>> GetListAsync();
         Task<CreatedCourseResponse> Add(CreateCourseRequest createCourseRequest);
+        Task<UpdatedCourseResponse> Update(UpdateCourseRequest updateCourseRequest);
+        Task<DeletedCourseResponse> Delete(DeleteCourseRequest deleteCourseRequest);
 
     }
 }

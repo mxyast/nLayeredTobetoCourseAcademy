@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Dtos.Responses
+namespace Business.Dtos.Responses.InstructorRespons
 {
-    public class CreatedCategoryResponse
+    public class CreatedInstructorResponse
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

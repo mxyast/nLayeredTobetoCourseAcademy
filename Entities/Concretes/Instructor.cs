@@ -11,5 +11,7 @@ namespace Entities.Concretes
     {
  
         public string Name { get; set;}
+        public List<Course> Course { get; set; }
+
     }
 }

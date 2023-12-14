@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
-using Business.Dtos.Requests;
-using Business.Dtos.Responses;
+using Business.Dtos.Requests.InstructorRequest;
+using Business.Dtos.Responses.InstructorRespons;
 using Core.DataAccess.Paging;
 using Entities.Concretes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Mapping
 {
@@ -15,11 +10,19 @@ namespace Business.Mapping
     {
         public InstructorMapping()
         {
-            CreateMap<CreatedInstructorResponse, Instructor>().ReverseMap();
-            CreateMap<CreateInstructorRequest, Instructor>().ReverseMap();
-            CreateMap<Paginate<Instructor>, Paginate<CreatedInstructorResponse>>().ReverseMap();
-        
+            CreateMap<Instructor, CreatedInstructorResponse>().ReverseMap();
+            CreateMap<Instructor, DeletedInstructorResponse>().ReverseMap();
+            CreateMap<Instructor, UpdatedInstructorResponse>().ReverseMap();
+            CreateMap<Instructor, GetListInstructorResponse>().ReverseMap();
+
+
+            CreateMap<Instructor, CreateInstructorRequest>().ReverseMap();
+            CreateMap<Instructor, UpdateInstructorRequest>().ReverseMap();
+            CreateMap<Instructor, DeleteInstructorRequest>().ReverseMap();
+
+            CreateMap<Paginate<Instructor>, Paginate<GetListInstructorResponse>>().ReverseMap();
+
         }
-       
+
     }
 }
